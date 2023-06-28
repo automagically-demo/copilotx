@@ -1,0 +1,112 @@
+[
+    {
+      "id": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/my-resource-group/providers/Microsoft.Storage/storageAccounts/mystorageaccount",
+      "name": "mystorageaccount",
+      "type": "Microsoft.Storage/storageAccounts",
+      "location": "eastus",
+      "properties": {
+        "networkAcls": {
+          "bypass": "AzureServices",
+          "virtualNetworkRules": [],
+          "ipRules": [],
+          "defaultAction": "Allow"
+        },
+        "supportsHttpsTrafficOnly": true,
+        "encryption": {
+          "services": {
+            "file": {
+              "enabled": true,
+              "lastEnabledTime": "2020-10-01T12:34:56.789Z"
+            },
+            "blob": {
+              "enabled": true,
+              "lastEnabledTime": "2020-10-01T12:34:56.789Z"
+            }
+          },
+          "keySource": "Microsoft.Storage"
+        },
+        "accessTier": "Hot"
+      }
+    },
+    {
+      "id": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/my-resource-group/providers/Microsoft.Web/sites/my-web-app",
+      "name": "my-web-app",
+      "type": "Microsoft.Web/sites",
+      "location": "eastus",
+      "properties": {
+        "state": "Running",
+        "hostNames": [
+          "my-web-app.azurewebsites.net"
+        ],
+        "enabledHostNames": [
+          "my-web-app.azurewebsites.net",
+          "my-web-app.scm.azurewebsites.net"
+        ],
+        "hostNameSslStates": [
+          {
+            "name": "my-web-app.azurewebsites.net",
+            "sslState": "Disabled",
+            "ipBasedSslResult": null,
+            "virtualIp": null,
+            "thumbprint": null,
+            "toUpdate": null,
+            "toUpdateIpBasedSsl": null,
+            "ipBasedSslState": "NotConfigured",
+            "hostType": "Standard"
+          },
+          {
+            "name": "my-web-app.scm.azurewebsites.net",
+            "sslState": "Disabled",
+            "ipBasedSslResult": null,
+            "virtualIp": null,
+            "thumbprint": null,
+            "toUpdate": null,
+            "toUpdateIpBasedSsl": null,
+            "ipBasedSslState": "NotConfigured",
+            "hostType": "Repository"
+          }
+        ],
+        "serverFarmId": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/my-resource-group/providers/Microsoft.Web/serverfarms/my-app-service-plan",
+        "reserved": false,
+        "isXenon": false,
+        "hyperV": false,
+        "lastModifiedTimeUtc": "2020-10-01T12:34:56.789Z",
+        "siteConfig": null,
+        "trafficManagerHostNames": null,
+        "scmSiteAlsoStopped": false,
+        "targetSwapSlot": null,
+        "hostingEnvironmentProfile": null,
+        "clientAffinityEnabled": true,
+        "clientCertEnabled": false,
+        "clientCertExclusionPaths": null,
+        "hostNamesDisabled": false,
+        "containerSize": 0,
+        "dailyMemoryTimeQuota": 0,
+        "suspendedTill": null,
+        "siteDisabledReason": 0,
+        "functionExecutionUnitsCache": null,
+        "maxNumberOfWorkers": null,
+        "homeStamp": "waws-prod-blu-001",
+        "cloningInfo": null,
+        "snapshotInfo": null,
+        "hostingEnvironmentId": null,
+        "tags": {},
+        "resourceGroup": "my-resource-group",
+        "defaultHostName": "my-web-app.azurewebsites.net",
+        "slotSwapStatus": null,
+        "httpsOnly": false,
+        "redundancyMode": "None",
+        "inProgressOperationId": null,
+        "geoDistributions": null,
+        "privateEndpointConnections": null,
+        "buildVersion": null,
+        "targetBuildVersion": null,
+        "migrationState": null,
+        "eligibleLogCategories": null,
+        "storageAccountRequired": false,
+        "virtualNetworkSubnetId": null,
+        "keyVaultReferenceIdentity": null
+      }
+    }
+  ]
+  
