@@ -1,4 +1,4 @@
-# Prompt: git? I want to move the last commit on a new branch
+# gh copilot suggest "I want to move the last commit on a new branch"
 
 
 # ──────────────────── Command ────────────────────
