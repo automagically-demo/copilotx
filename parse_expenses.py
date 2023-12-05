@@ -1,3 +1,5 @@
+import datetime
+
 def parse_expenses(expenses_string):
     """
     Parse the list of expenses and return the list of triples (value, currency, date).
@@ -10,30 +12,27 @@ def parse_expenses(expenses_string):
     """
     # Initialize an empty list to store the parsed expenses
     expenses = []
-    
-    # Iterate over each line in the expenses_string
-    for line in expenses_string.splitlines():
+
+    # Split the expenses_string into lines
+    lines = expenses_string.splitlines()
+
+    # Iterate over each line
+    for line in lines:
         # Ignore lines that start with '#'
         if line.startswith("#"):
             continue
-        
+
         # Split the line into date, value, and currency
-        date, value, currency = line.split(" ")
-        
+        date_str, value_str, currency = line.split()
+
+        # Convert the date string to a datetime object
+        date = datetime.datetime.strptime(date_str, "%Y-%m-%d")
+
+        # Convert the value string to a float
+        value = float(value_str)
+
         # Append the parsed expense to the expenses list
-        expenses.append((float(value), currency, datetime.datetime.strptime(date, "%Y-%m-%d")))
-    
+        expenses.append((value, currency, date))
+
     # Return the list of parsed expenses
     return expenses
-
-# Define a string of expenses data
-expenses_data = '''2023-01-02 -34.01 USD
-2023-01-03 2.59 DKK
-2023-01-03 -2.72 EUR'''
-
-# Parse the expenses data
-expenses = parse_expenses(expenses_data)
-
-# Print each parsed expense
-for expense in expenses:
-    print(f'{expense[0]} {expense[1]} {expense[2]}')
