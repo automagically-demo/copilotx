@@ -14,4 +14,3 @@ if __name__	== '__main__':
     print(("valid", "invalid")[checkvalid('',e_regex)])
     print(("valid", "invalid")[checkvalid('',p_regex)])
     print(("valid", "invalid")[checkvalid('',s_regex)])
-
