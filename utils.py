@@ -1,18 +1,19 @@
 import re
 
-e_regex = r'^[\w\.\+\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$'
-p_regex = r'^(\+)?1?\d{9,15}$'
-s_regex = r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$'
+EMAIL_REGEX = r'^[\w\.\+\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$'
+PHONE_REGEX = r'^(\+)?1?\d{9,15}$'
+PASSWORD_REGEX = r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$'
 
-def checkvalid(text, regex):
-    if re.search(regex, text):
-        return True
-    else:
-        return False
+def is_valid(text, regex):
+    """Check if the text matches the given regex."""
+    return bool(re.search(regex, text))
 
-if __name__	== '__main__':
-    print(("valid", "invalid")[checkvalid('',e_regex)])
-    print(("valid", "invalid")[checkvalid('',p_regex)])
-    print(("valid", "invalid")[checkvalid('',s_regex)])
+def print_validation_result(is_valid, input_type):
+    """Print the validation result."""
+    result = "valid" if is_valid else "invalid"
+    print(f"The input is {result} as per {input_type} rules.")
 
-
+if __name__ == '__main__':
+    print_validation_result(is_valid('', EMAIL_REGEX), "email")
+    print_validation_result(is_valid('', PHONE_REGEX), "phone number")
+    print_validation_result(is_valid('', PASSWORD_REGEX), "password")
