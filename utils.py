@@ -11,12 +11,20 @@ phone_regex = r'^(\+)?1?\d{9,15}$'
 # one uppercase letter, one digit, and one special character
 password_regex = r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$'
 
-def is_valid(text, regex):
-    """Check if the text matches the regular expression."""
-    return bool(re.search(regex, text))
+def is_valid_email(text):
+    """Check if the text is a valid email address."""
+    return bool(re.search(email_regex, text))
+
+def is_valid_phone(text):
+    """Check if the text is a valid phone number."""
+    return bool(re.search(phone_regex, text))
+
+def is_valid_password(text):
+    """Check if the text is a valid password."""
+    return bool(re.search(password_regex, text))
 
 if __name__ == '__main__':
-    # Test the is_valid function with empty strings
-    print("Email validation result:", "valid" if is_valid('', email_regex) else "invalid")
-    print("Phone validation result:", "valid" if is_valid('', phone_regex) else "invalid")
-    print("Password validation result:", "valid" if is_valid('', password_regex) else "invalid")
+    # Test the validation functions with empty strings
+    print("Email validation result:", "valid" if is_valid_email('') else "invalid")
+    print("Phone validation result:", "valid" if is_valid_phone('') else "invalid")
+    print("Password validation result:", "valid" if is_valid_password('') else "invalid")
